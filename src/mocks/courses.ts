@@ -5,7 +5,9 @@ const Courses: Course[] = [
   {
     id: 1,
     title: "Introduction to Web Development",
+    AuthorId: 1,
     price: 29.99,
+    featured: false,
     description:
       "Learn the basics of web development, from HTML to CSS and JavaScript. A perfect course for beginners looking to dive into web design and development.",
     lessons: [
@@ -34,12 +36,14 @@ const Courses: Course[] = [
     timeRequired: "3 hours",
     rating: 4.5,
     categories: [Category.WebDevelopment, Category.Beginner, Category.FrontEnd],
-    image: "https://www.example.com/images/webdev_course.jpg",
+    image: require("../../assets/images/web-dev.webp"),
   },
   {
     id: 2,
     title: "Advanced Machine Learning",
     price: 99.99,
+    AuthorId: 4,
+    featured: true,
     description:
       "Take your machine learning skills to the next level with this in-depth course on advanced algorithms, neural networks, and deep learning.",
     lessons: [
@@ -73,12 +77,14 @@ const Courses: Course[] = [
       Category.AI,
       Category.DeepLearning,
     ],
-    image: "https://www.example.com/images/ml_course.jpg",
+    image: require("../../assets/images/advanced-ml.webp"),
   },
   {
     id: 3,
     title: "Photography for Beginners",
     price: 49.99,
+    AuthorId: 2,
+    featured: true,
     description:
       "Master the fundamentals of photography, learn to shoot with different lighting, and understand your camera settings to take stunning photos.",
     lessons: [
@@ -107,12 +113,14 @@ const Courses: Course[] = [
     timeRequired: "5 hours",
     rating: 4.7,
     categories: [Category.Photography, Category.Beginner, Category.Creative],
-    image: "https://www.example.com/images/photography_course.jpg",
+    image: require("../../assets/images/web-dev.webp"),
   },
   {
     id: 4,
     title: "Complete Python Bootcamp",
     price: 39.99,
+    AuthorId: 4,
+    featured: false,
     description:
       "A comprehensive guide to learning Python programming. Start from the basics and progress to intermediate concepts like OOP and web development with Flask.",
     lessons: [
@@ -141,12 +149,14 @@ const Courses: Course[] = [
     timeRequired: "8 hours",
     rating: 4.9,
     categories: [Category.Python, Category.Beginner, Category.Intermediate],
-    image: "https://www.example.com/images/python_course.jpg",
+    image: require("../../assets/images/python.webp"),
   },
   {
     id: 5,
     title: "Digital Marketing Masterclass",
     price: 79.99,
+    AuthorId: 3,
+    featured: false,
     description:
       "Learn the essential skills for becoming a digital marketing expert. From SEO to social media marketing, this course covers it all.",
     lessons: [
@@ -183,7 +193,7 @@ const Courses: Course[] = [
       Category.Beginner,
       Category.Intermediate,
     ],
-    image: "https://www.example.com/images/digital_marketing_course.jpg",
+    image: require("../../assets/images/marketing.webp"),
   },
 ];
 

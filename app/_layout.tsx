@@ -2,7 +2,7 @@ import "~/global.css";
 
 import { DARK_THEME, LIGHT_THEME } from "@/constants";
 import { useColorScheme } from "@/hooks/common";
-import { CourseProvider } from "@/providers";
+import { CourseProvider, UserProvider } from "@/providers";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { ThemeProvider } from "@react-navigation/native";
 import { SplashScreen, Stack } from "expo-router";
@@ -49,14 +49,24 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={isDarkColorScheme ? DARK_THEME : LIGHT_THEME}>
-      <CourseProvider>
-        <StatusBar style={isDarkColorScheme ? "light" : "dark"} />
-        <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="course" options={{ headerShown: false }} />
-          <Stack.Screen name="+not-found" />
-        </Stack>
-      </CourseProvider>
+      <UserProvider>
+        <CourseProvider>
+          <StatusBar style={isDarkColorScheme ? "light" : "dark"} />
+          <Stack screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="(tabs)" />
+            <Stack.Screen 
+              name="course"
+              options={{
+                animation: "slide_from_right",
+              }}
+            />
+            <Stack.Screen name="category" />
+            <Stack.Screen name="categories" />
+            <Stack.Screen name="explore" />
+            <Stack.Screen name="+not-found" />
+          </Stack>
+        </CourseProvider>
+      </UserProvider>
     </ThemeProvider>
   );
 }
