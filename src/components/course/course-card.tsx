@@ -36,14 +36,14 @@ export const CourseCard = ({ course }: CourseCardProps) => {
         </CardContent>
 
         <CardFooter className="flex flex-col justify-start items-start gap-2">
-          <View className="">
-            <Badge className="flex flex-row gap-2 bg-green-500">
-              <Ionicons name="checkmark-circle" size={16} color="white" />
-              <P className="text-primary-foreground">
-                {enrolled ? "Enrolled" : "Not Enrolled"}
-              </P>
-            </Badge>
-          </View>
+          {enrolled && (
+            <View>
+              <Badge className="flex flex-row gap-2 bg-green-500">
+                <Ionicons name="checkmark-circle" size={16} color="white" />
+                <P className="text-primary-foreground">Enrolled</P>
+              </Badge>
+            </View>
+          )}
           <View className="flex flex-row gap-2 flex-wrap">
             {course.categories.map((category, index) => (
               <Badge key={index}>
