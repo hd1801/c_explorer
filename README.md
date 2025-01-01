@@ -1,50 +1,95 @@
-# Welcome to your Expo app 👋
+# Course Learning App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A mobile application built with Expo and React Native for online course management and learning.
 
-## Get started
+## Prerequisites
 
-1. Install dependencies
+- Node.js (v16 or higher)
+- npm or yarn
+- Expo CLI (`npm install -g expo-cli`)
+- Expo Go app on your mobile device (available on [iOS App Store](https://apps.apple.com/app/apple-store/id982107779) or [Google Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent))
 
-   ```bash
-   npm install
-   ```
+## Installation
 
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+1. Clone the repository:
 
 ```bash
-npm run reset-project
+git clone https://github.com/hd1801/c_explorer
+cd c_explorer
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Install dependencies:
 
-## Learn more
+```bash
+npm install
+# or
+yarn install
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+## Running the App
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+1. Start the development server:
 
-## Join the community
+```bash
+npx expo start
+```
 
-Join our community of developers creating universal apps.
+2. Running on your device:
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+   - Install the Expo Go app on your mobile device
+   - Scan the QR code shown in the terminal with:
+     - iOS: Use your device's camera
+     - Android: Use the Expo Go app's QR scanner
+
+3. Running on simulators:
+   - iOS (requires macOS):
+     ```bash
+     npx expo start --ios
+     ```
+   - Android:
+     ```bash
+     npx expo start --android
+     ```
+
+## Development Notes
+
+- The app uses Expo Router for navigation
+- User authentication is implemented using a custom provider
+- Course data is managed through a centralized state management system
+
+## Project Structure
+
+```
+app/
+├── (tabs)/           # Tab-based navigation screens
+├── course/           # Course-related screens
+├── _layout.tsx      # Root layout configuration
+├── register.tsx     # Registration screen
+src/
+├── components/      # Reusable components
+├── providers/       # Context providers
+├── types/          # TypeScript type definitions
+```
+
+## Troubleshooting
+
+If you encounter any issues:
+
+1. Clear the Expo cache:
+
+```bash
+npx expo start -c
+```
+
+2. Verify your Node.js version:
+
+```bash
+node --version
+```
+
+3. Make sure all dependencies are properly installed:
+
+```bash
+rm -rf node_modules
+npm install
+```
