@@ -46,9 +46,6 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  // Make saveUser available globally
-  global.saveUser = saveUser;
-
   const enrollInCourse = async (courseId: number) => {
     const newEnrollment: EnrolledCourse = {
       courseId,

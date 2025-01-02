@@ -17,10 +17,7 @@ export default function HomeScreen() {
   );
 
   const recentEnrolledCourses = useMemo(() => {
-    const sortedEnrolled = [...enrolledCourses].sort(
-      (a, b) => b.enrolledAt.getTime() - a.enrolledAt.getTime()
-    );
-    return sortedEnrolled
+    return enrolledCourses
       .slice(0, 2)
       .map((enrolled) => courses.find((c) => c.id === enrolled.courseId))
       .filter(Boolean);
